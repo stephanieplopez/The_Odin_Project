@@ -4,4 +4,9 @@ class Player
         @name = name
         @symbol = symbol
     end
+
+    def move(column, row)
+        @column = column
+        @row = row
+    end
 end
