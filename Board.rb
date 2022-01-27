@@ -1,17 +1,24 @@
 class Board
+    attr_accessor :top_row, :middle_row, :bottom_row
+
     def initialize()
-        @first_row =
-        @second_row = 
-        @third_row = 
+        @top_row = create_board_row()
+        @middle_row = create_board_row()
+        @bottom_row = create_bottom_board_row()
     end
 
-    def create_top_board_row()
-    end
-
-    def create_middle_board_row()
+    def create_board_row()
+        array = ["_", "_", "_", "|", "_", "_", "_", "|", "_", "_", "_", "\n"]
     end
 
     def create_bottom_board_row()
+        array = [" ", " ", " ", "|", " ", " ", " ", "|", " ", " ", " ", "\n"]
+    end
+
+    def display_board()
+        @top_row.each { |character| print character }
+        @middle_row.each { |character| print character }
+        @bottom_row.each { |character| print character }
     end
 
 end

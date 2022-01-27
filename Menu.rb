@@ -9,11 +9,14 @@ class Menu
         print "Please choose an option: "
     end
 
-    # def user_selection()
-    #     print "Please choose an option: "
-    #     user_selection = gets.chomp
-    #     return user_selection
-    # end
+    def quit_and_display_exit_message()
+        puts 
+        puts "******************************"
+        puts "Thank you for using TicTacToe"
+        puts "******************************"
+        puts 
+        exit    
+    end
 
     def prompt_first_player()
         print "Please enter the name of the first player who will play for 'X': "
