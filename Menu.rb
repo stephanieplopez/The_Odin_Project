@@ -15,8 +15,14 @@ class Menu
     #     return user_selection
     # end
 
-    def start_game()
-        print "Please enter first player name:"
+    def prompt_first_player()
+        print "Please enter the name of the first player who will play for 'X': "
     end
 
+    def prompt_second_player()
+        print "Please enter the name of the second player who will play for 'O': "
+    end
+
+    def start_game()
+    end
 end
