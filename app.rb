@@ -15,9 +15,20 @@ if user_selection == "1"
 
     isGameFinished = false
     while isGameFinished == false do
-
         game_board = Board.new()
         game_board.display_board()
+        if x_player.isActive == true
+            # x player makes a move
+            x_player.isActive = false
+            o_player.isActive = true
+        else
+            # o player makes a move
+            o_player.isActive = false
+            x_player.isActive = true
+            isGameFinished == true
+        end
+        # Display winner
+        puts "Game has finished"
     end
 elsif user_selection == "2"
     menu.quit_and_display_exit_message()
