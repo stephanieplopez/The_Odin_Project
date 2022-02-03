@@ -10,11 +10,13 @@ class Player
     def self.create_first_player(name)
         symbol = "X"
         isActive = true
+        Player.new(name)
     end
 
     def self.create_second_player(name)
         symbol = "O"
         isActive = false
+        Player.new(name)
     end
 
     def move(column, row)

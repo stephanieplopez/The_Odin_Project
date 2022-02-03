@@ -25,7 +25,7 @@ if user_selection == "1"
             # o player makes a move
             o_player.isActive = false
             x_player.isActive = true
-            isGameFinished == true
+            isGameFinished = true
         end
         # Display winner
         puts "Game has finished"
