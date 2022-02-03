@@ -12,8 +12,13 @@ if user_selection == "1"
     menu.prompt_second_player
     o_player_name = gets.chomp
     o_player = Player.create_second_player(o_player_name)
-    game_board = Board.new()
-    game_board.display_board()
+
+    isGameFinished = false
+    while isGameFinished == false do
+
+        game_board = Board.new()
+        game_board.display_board()
+    end
 elsif user_selection == "2"
     menu.quit_and_display_exit_message()
 end
