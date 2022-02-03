@@ -1,5 +1,6 @@
 class Menu
     def initialize()
+        puts
         puts "Welcome to TicTacToe!"
     end
 
