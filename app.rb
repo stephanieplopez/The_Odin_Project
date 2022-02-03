@@ -1,3 +1,5 @@
+# check for excluding Mac files
+
 require_relative 'Menu.rb'
 require_relative 'Player.rb'
 require_relative 'Board.rb'
