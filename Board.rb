@@ -21,4 +21,7 @@ class Board
         @bottom_row.each { |character| print character }
     end
 
+    # Create method for checking rows, columns, and diagonals
+    # Record/Display the players move on the board
+
 end

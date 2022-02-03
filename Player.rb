@@ -24,12 +24,7 @@ class Player
         @row = row
     end
 
-    # def whose_turn_is_it(x_player, o_player)
-    #     if x_player.isActive = true  
-    #         return x_player
-    #      else
-    #          return o_player
-    #
-    # end
-
+# decide on how players input moves
+# (Player or Board?) interpreter to translate moves to array changes
+# ? Add to else statement for checking condition of 
 end

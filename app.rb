@@ -25,8 +25,10 @@ if user_selection == "1"
             # o player makes a move
             o_player.isActive = false
             x_player.isActive = true
-            isGameFinished = true
         end
+        # Add check game state ie rows, columns etc from Board class
+        isGameFinished = true
+
         # Display winner
         puts "Game has finished"
     end
