@@ -7,6 +7,7 @@ class Menu
     def display_menu_options()
         puts "1. Start Game"
         puts "2. Exit Game"
+        puts "3. Show key"
         print "Please choose an option: "
     end
 

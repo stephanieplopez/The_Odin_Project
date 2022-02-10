@@ -14,8 +14,8 @@ if user_selection == "1"
     o_player = Player.create_second_player(o_player_name)
 
     game_board = Board.new()
-    
     isGameFinished = false
+    
     while isGameFinished == false do
         game_board.display_board()
         win_condition_board = game_board

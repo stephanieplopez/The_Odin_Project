@@ -9,13 +9,13 @@ class Board
 
     def display_key()
         example = [
-            [" HEADER "],
-            ["___", "|", "___", "|", "___"],
-            ["___", "|", "___", "|", "___"],
-            ["   ", "|", "   ", "|", "   "]
+            ["   L ", "  M   ", "R"],
+            ["T ___|", "___", "|___"],
+            ["M ___|", "___", "|___"],
+            ["B    |", "   ", "|   "]
     ]
-        example.each do |left, ldivider, middle, rdivider, right| 
-            puts "#{left}#{ldivider}#{middle}#{rdivider}#{right}"
+        example.each do |left, middle, right| 
+            puts "#{left}#{middle}#{right}"
         end
     end
 

@@ -24,7 +24,7 @@ class Player
         @row = row
     end
 
-# decide on how players input moves
+# Decide on how players input moves
 # (Player or Board?) interpreter to translate moves to array changes
-# ? Add to else statement for checking condition of 
+# Add logic to win condition board
 end
