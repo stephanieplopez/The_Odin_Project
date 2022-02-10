@@ -7,6 +7,18 @@ class Board
         @bottom_row = create_bottom_board_row()
     end
 
+    def display_key()
+        example = [
+            [" HEADER "],
+            ["___", "|", "___", "|", "___"],
+            ["___", "|", "___", "|", "___"],
+            ["   ", "|", "   ", "|", "   "]
+    ]
+        example.each do |left, ldivider, middle, rdivider, right| 
+            puts "#{left}#{ldivider}#{middle}#{rdivider}#{right}"
+        end
+    end
+
     def create_board_row()
         array = ["_", "_", "_", "|", "_", "_", "_", "|", "_", "_", "_", "\n"]
     end
