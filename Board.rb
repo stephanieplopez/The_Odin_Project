@@ -21,6 +21,12 @@ class Board
         @bottom_row.each { |character| print character }
     end
 
+    def make_win_condition_board()
+        @top_row = [@top_row[1],@top_row[5],@top_row[9]]
+        @middle_row = [@middle_row[1],@middle_row[5],@middle_row[9]]
+        @bottom_row = [@bottom_row[1],@bottom_row[5],@bottom_row[9]]
+    end
+
     # Create method for checking rows, columns, and diagonals
     # Record/Display the players move on the board
 
