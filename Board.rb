@@ -1,3 +1,5 @@
+require_relative 'Player.rb'
+
 class Board
     attr_accessor :top_row, :middle_row, :bottom_row
 
@@ -9,10 +11,9 @@ class Board
 
     def display_key()
         example = [
-            ["   L ", "  M   ", "R"],
-            ["T ___|", "___", "|___"],
-            ["M ___|", "___", "|___"],
-            ["B    |", "   ", "|   "]
+            ["_1_|", "_2_", "|_3_"],
+            ["_4_|", "_5_", "|_6_"],
+            [" 7 |", " 8 ", "| 9 "]
     ]
         example.each do |left, middle, right| 
             puts "#{left}#{middle}#{right}"
@@ -33,13 +34,38 @@ class Board
         @bottom_row.each { |character| print character }
     end
 
-    def make_win_condition_board()
-        @top_row = [@top_row[1],@top_row[5],@top_row[9]]
-        @middle_row = [@middle_row[1],@middle_row[5],@middle_row[9]]
-        @bottom_row = [@bottom_row[1],@bottom_row[5],@bottom_row[9]]
+    # Logic for determining when game is finished
+    def check_if_win_condition_has_been_met()
+        top_row = [@top_row[1],@top_row[5],@top_row[9]]
+        middle_row = [@middle_row[1],@middle_row[5],@middle_row[9]]
+        bottom_row = [@bottom_row[1],@bottom_row[5],@bottom_row[9]]
     end
 
-    # Create method for checking rows, columns, and diagonals
+    def prompt_player_for_move()
+        # How can we display the player's name when prompted (?)
+        puts ", please select box to place symbol: "    
+    end
+
+
     # Record/Display the players move on the board
+    def process_move(box, symbol)
+        case box
+        when "1"
+            # How do we access Player Symbol
+            puts "The symbol that moved is: " + symbol
+            top_row[1] = symbol
+
+        when "2"
+            puts "The symbol that moved is: " + symbol
+            top_row[5] = symbol    
+        when "3"
+            puts "The symbol that moved is: " + symbol
+            top_row[9] = symbol       
+        else
+            # Add logic for rejecting input that is anythng other than 1 - 9
+            puts "There was an error!"
+        end 
+    end
+    # Create method for checking rows, columns, and diagonals
 
 end

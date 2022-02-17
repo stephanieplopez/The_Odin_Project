@@ -17,26 +17,42 @@ if user_selection == "1"
     isGameFinished = false
     
     while isGameFinished == false do
+
         game_board.display_board()
-        win_condition_board = game_board
-        # A duplicate board is created using the game board
-        win_condition_board.make_win_condition_board()
-        # The duplicate board is converted to a short-hand version for use in checking win conditions
+
+        # Add check for win conditions for each player
+
+        puts ""
+        
         if x_player.isActive == true
-            # x player makes a move
+            puts "*** Player " + x_player_name + " turn ***"
+            game_board.prompt_player_for_move()
+            x_player_move = gets.chomp
+
+            # Process x player move
+            game_board.process_move(x_player_move, x_player.symbol)
+
             x_player.isActive = false
             o_player.isActive = true
-        else
-            # o player makes a move
+        elsif o_player.isActive == true
+            puts "*** Player " + o_player_name + " turn ***"
+            game_board.prompt_player_for_move()
+            o_player_move = gets.chomp
+
+            # Process o player move
+            game_board.process_move(o_player_move, o_player.symbol)
+
             o_player.isActive = false
             x_player.isActive = true
+        else
+            puts "Todo smells"
         end
         # Add check game state ie rows, columns etc from Board class
-        isGameFinished = true
+        # isGameFinished = true
 
         # Display winner
-        puts "Game has finished"
     end
+    puts "Game has finished"
 elsif user_selection == "2"
     menu.quit_and_display_exit_message()
 end

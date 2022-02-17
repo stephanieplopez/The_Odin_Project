@@ -1,27 +1,26 @@
 class Player
     attr_accessor :name, :isActive, :symbol
 
-    def initialize(name)
+    def initialize(name, isActive, symbol)
         @name = name
         @isActive = isActive
         @symbol = symbol
     end
 
     def self.create_first_player(name)
-        symbol = "X"
         isActive = true
-        Player.new(name)
+        symbol = "X"
+        Player.new(name, isActive, symbol)
     end
 
     def self.create_second_player(name)
-        symbol = "O"
         isActive = false
-        Player.new(name)
+        symbol = "O"
+        Player.new(name, isActive, symbol)
     end
 
-    def move(column, row)
-        @column = column
-        @row = row
+    def move(box)
+        @box = box
     end
 
 # Decide on how players input moves
