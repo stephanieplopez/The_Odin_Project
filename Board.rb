@@ -71,6 +71,18 @@ class Board
         puts ", please select box to place symbol: "    
     end
 
+    def validate_move()
+        input = false
+        until input == true
+            user_input = gets.chomp
+            if user_input.match('^[1-9]$')    
+                input = true
+            else 
+                puts "*** Please enter valid move ***"
+            end
+        end
+        return user_input
+    end
 
     # Record/Display the players move on the board
     def process_move(box, symbol)
@@ -79,15 +91,32 @@ class Board
             # How do we access Player Symbol
             puts "The symbol that moved is: " + symbol
             top_row[1] = symbol
-
         when "2"
             puts "The symbol that moved is: " + symbol
             top_row[5] = symbol    
         when "3"
             puts "The symbol that moved is: " + symbol
             top_row[9] = symbol       
+        when "4"
+            puts "The symbol that moved is: " + symbol
+            middle_row[1] = symbol     
+        when "5"
+            puts "The symbol that moved is: " + symbol
+            middle_row[5] = symbol
+        when "6"
+            puts "The symbol that is moved is " + symbol
+            middle_row[9] = symbol
+        when "7"
+            puts "The symbol that is moved is " + symbol
+            bottom_row[1] = symbol
+        when "8"
+            puts "The symbol that is moved is " + symbol
+            bottom_row[5] = symbol
+        when "9"
+            puts "The symbol that is moved is " + symbol
+            bottom_row[9] = symbol
         else
-            # Add logic for rejecting input that is anythng other than 1 - 9
+            # Add logic for rejecting input that is anything other than 1 - 9
             puts "There was an error!"
         end 
     end

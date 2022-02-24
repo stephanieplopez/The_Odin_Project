@@ -27,7 +27,9 @@ if user_selection == "1"
         if x_player.isActive == true
             puts "*** Player " + x_player_name + " turn ***"
             game_board.prompt_player_for_move()
-            x_player_move = gets.chomp
+
+            # Prompt player for valid input
+            x_player_move = game_board.validate_move()
 
             # Process x player move
             game_board.process_move(x_player_move, x_player.symbol)
@@ -37,7 +39,7 @@ if user_selection == "1"
         elsif o_player.isActive == true
             puts "*** Player " + o_player_name + " turn ***"
             game_board.prompt_player_for_move()
-            o_player_move = gets.chomp
+            o_player_move = game_board.validate_move()
 
             # Process o player move
             game_board.process_move(o_player_move, o_player.symbol)
@@ -63,5 +65,7 @@ if user_selection == "1"
     end
     puts "Game Over"
 elsif user_selection == "2"
+    board.disply_key()
+elsif user_selection == "3"
     menu.quit_and_display_exit_message()
 end
