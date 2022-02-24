@@ -52,6 +52,10 @@ if user_selection == "1"
             isGameFinished = true
         end
     end
+    
+    #We change isActive status AFTER a player makes a move, so after the winning move is made, the winning
+    #player's isActive status is set to false - that's why the names are reversed below
+    
     if x_player.isActive == true
         puts "Congratulations " + o_player_name + ", you have won!"
     else
