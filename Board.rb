@@ -36,9 +36,34 @@ class Board
 
     # Logic for determining when game is finished
     def check_if_win_condition_has_been_met()
-        top_row = [@top_row[1],@top_row[5],@top_row[9]]
-        middle_row = [@middle_row[1],@middle_row[5],@middle_row[9]]
-        bottom_row = [@bottom_row[1],@bottom_row[5],@bottom_row[9]]
+        if (([top_row[1],top_row[5],top_row[9]].all? {|symbol| symbol=="X"}) == true or
+            ([top_row[1],top_row[5],top_row[9]].all? {|symbol| symbol=="O"}) == true) == true
+            1
+        elsif (([middle_row[1],middle_row[5],middle_row[9]].all? {|symbol| symbol=="X"}) == true or
+               ([middle_row[1],middle_row[5],middle_row[9]].all? {|symbol| symbol=="O"}) == true) == true
+            1
+        elsif (([bottom_row[1],bottom_row[5],bottom_row[9]].all? {|symbol| symbol=="X"}) == true or
+               ([bottom_row[1],bottom_row[5],bottom_row[9]].all? {|symbol| symbol=="O"}) == true) == true
+            1
+        elsif (([top_row[1],middle_row[1],bottom_row[1]].all? {|symbol| symbol=="X"}) == true or
+               ([top_row[1],middle_row[1],bottom_row[1]].all? {|symbol| symbol=="O"}) == true) == true
+            1
+        elsif (([top_row[5],middle_row[5],bottom_row[5]].all? {|symbol| symbol=="X"}) == true or
+               ([top_row[5],middle_row[5],bottom_row[5]].all? {|symbol| symbol=="O"}) == true) == true
+            1
+        elsif (([top_row[9],middle_row[9],bottom_row[9]].all? {|symbol| symbol=="X"}) == true or
+               ([top_row[9],middle_row[9],bottom_row[9]].all? {|symbol| symbol=="O"}) == true) == true
+            1
+        elsif (([top_row[1],middle_row[5],bottom_row[9]].all? {|symbol| symbol=="X"}) == true or
+               ([top_row[1],middle_row[5],bottom_row[9]].all? {|symbol| symbol=="O"}) == true) == true
+            1
+        elsif (([top_row[1],middle_row[5],bottom_row[9]].all? {|symbol| symbol=="X"}) == true or
+               ([top_row[1],middle_row[5],bottom_row[9]].all? {|symbol| symbol=="O"}) == true) == true
+            1
+        elsif (([top_row[9],middle_row[5],bottom_row[1]].all? {|symbol| symbol=="X"}) == true or
+               ([top_row[9],middle_row[5],bottom_row[1]].all? {|symbol| symbol=="O"}) == true) == true
+            1
+        end
     end
 
     def prompt_player_for_move()

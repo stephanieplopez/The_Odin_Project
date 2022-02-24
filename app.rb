@@ -47,12 +47,17 @@ if user_selection == "1"
         else
             puts "Todo smells"
         end
-        # Add check game state ie rows, columns etc from Board class
-        # isGameFinished = true
 
-        # Display winner
+        if game_board.check_if_win_condition_has_been_met() == 1
+            isGameFinished = true
+        end
     end
-    puts "Game has finished"
+    if x_player.isActive == true
+        puts "Congratulations " + o_player_name + ", you have won!"
+    else
+        puts "Congratulations " + x_player_name + ", you have won!"
+    end
+    puts "Game Over"
 elsif user_selection == "2"
     menu.quit_and_display_exit_message()
 end
