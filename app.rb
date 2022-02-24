@@ -39,6 +39,7 @@ if user_selection == "1"
         elsif o_player.isActive == true
             puts "*** Player " + o_player_name + " turn ***"
             game_board.prompt_player_for_move()
+            
             o_player_move = game_board.validate_move()
 
             # Process o player move

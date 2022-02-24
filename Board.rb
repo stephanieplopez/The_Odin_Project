@@ -84,7 +84,7 @@ class Board
         return user_input
     end
 
-    # Record/Display the players move on the board
+    # Prevent players from making moves that have already been made
     def process_move(box, symbol)
         case box
         when "1"
@@ -115,11 +115,7 @@ class Board
         when "9"
             puts "The symbol that is moved is " + symbol
             bottom_row[9] = symbol
-        else
-            # Add logic for rejecting input that is anything other than 1 - 9
-            puts "There was an error!"
         end 
     end
-    # Create method for checking rows, columns, and diagonals
 
 end
