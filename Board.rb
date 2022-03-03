@@ -7,6 +7,7 @@ class Board
         @top_row = create_board_row()
         @middle_row = create_board_row()
         @bottom_row = create_bottom_board_row()
+        @move_log = []
     end
 
     def display_key()
@@ -76,7 +77,13 @@ class Board
         until input == true
             user_input = gets.chomp
             if user_input.match('^[1-9]$')    
-                input = true
+                if move_log.any?(user_input)
+                    puts "*** This box already occupied ***"
+                    puts "*** Please make different move ***"
+                else
+                    move_log.append(user_input)
+                    input = true
+                end
             else 
                 puts "*** Please enter valid move ***"
             end

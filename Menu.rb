@@ -11,13 +11,12 @@ class Menu
         print "Please choose an option: "
     end
 
-    def quit_and_display_exit_message()
+    def display_exit_message()
         puts 
         puts "******************************"
         puts "Thank you for using TicTacToe"
         puts "******************************"
-        puts 
-        exit    
+        puts  
     end
 
     def prompt_first_player()
