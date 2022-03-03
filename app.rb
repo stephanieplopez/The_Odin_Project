@@ -66,7 +66,7 @@ if user_selection == "1"
     end
     puts "Game Over"
 elsif user_selection == "2"
-    board.disply_key()
+    board.display_key()
 elsif user_selection == "3"
     menu.quit_and_display_exit_message()
 end
