@@ -1,7 +1,7 @@
 require_relative 'Player.rb'
 
 class Board
-    attr_accessor :top_row, :middle_row, :bottom_row
+    attr_accessor :top_row, :middle_row, :bottom_row, :move_log
 
     def initialize()
         @top_row = create_board_row()
@@ -67,25 +67,26 @@ class Board
         end
     end
 
-    def prompt_player_for_move()
+    def prompt_move_from(player)
         # How can we display the player's name when prompted (?)
-        puts ", please select box to place symbol: "    
+        puts player + ", please select box to place symbol: "    
     end
 
-    def validate_move()
+    def validate_move_from(player)
         input = false
         until input == true
             user_input = gets.chomp
             if user_input.match('^[1-9]$')    
                 if move_log.any?(user_input)
                     puts "*** This box already occupied ***"
-                    puts "*** Please make different move ***"
+                    prompt_move_from(player)
                 else
                     move_log.append(user_input)
                     input = true
                 end
             else 
                 puts "*** Please enter valid move ***"
+                prompt_move_from(player)
             end
         end
         return user_input

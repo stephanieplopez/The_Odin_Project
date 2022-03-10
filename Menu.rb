@@ -27,6 +27,12 @@ class Menu
         print "Please enter the name of the second player who will play for 'O': "
     end
 
+    def render_ascii_art
+        File.foreach("congrats_ascii.txt") do |line|
+          puts line
+        end
+    end
+
     def start_game()
     end
 end
