@@ -9,6 +9,7 @@ while true do
     user_selection = gets.chomp
     if user_selection == "1"
         puts "User has started game"
+        
     elsif user_selection == "2"
         menu.display_exit_message()
         exit
