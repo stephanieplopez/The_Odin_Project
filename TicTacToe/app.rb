@@ -8,6 +8,7 @@ while true do
     game_board = Board.new()
     menu.display_menu_options()
     user_selection = gets.chomp
+
     if user_selection == "1"
         menu.prompt_first_player
         x_player_name = gets.chomp
@@ -82,7 +83,8 @@ while true do
     elsif user_selection == "3"
         menu.display_exit_message()
         exit
-    elsif user_selection == "exit" || "quit"
+
+    elsif user_selection == "exit" || user_selection == "quit"
         exit
     end
 end
