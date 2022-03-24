@@ -7,7 +7,7 @@ menu = Menu.new()
 file_processor = File_Processor.new()
 valid_words = file_processor.clean_file()
 
-puts valid_words.length()
+puts "#{valid_words.length()}"
 
 while true do
     menu.display_menu_options()
