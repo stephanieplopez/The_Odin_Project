@@ -11,7 +11,7 @@ class File_Processor
     valid_words = []
     contents.each do |word|
       if word.length() >= 5 and word.length() <= 12
-        valid_words.append(word)
+        valid_words.append(word.strip())
       end
     end
     puts "File has been processed and cleaned successfully!"
