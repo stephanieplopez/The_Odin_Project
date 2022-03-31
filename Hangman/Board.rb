@@ -2,10 +2,12 @@ require_relative 'Player.rb'
 require_relative 'File_Processor.rb'
 
 class Board
-    def initialize()
-        @correct_answer = choose_random_word(valid_words)
-    end
+  def initialize()
+    @correct_answer = "answer"
+  end
 
-    # num_selection = rand(10000)
-    # word = contents[num_selection]
+  def select_correct_answer(valid_words)
+    valid_words[rand(8451)]
+  end
+
 end
