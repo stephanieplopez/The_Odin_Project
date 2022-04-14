@@ -11,7 +11,7 @@ while true do
   if user_selection == '1'
     puts "User has started game"
 
-    menu.prompt_player()
+    menu.prompt_player_for_name()
     player = Player.new(gets.chomp)
     menu.welcome_player(player.name)
     board_setup = SetupGame.new()
@@ -21,7 +21,14 @@ while true do
     # remove line when finalizing the game
     puts game_board.answer
 
+    # We will want a loop here so that the player gets more than 1 turn
+    
     game_board.display_board
+
+    menu.prompt_player_for_letter
+
+    letter_guessed = gets.chomp
+    game_board.receive_letter(letter_guessed)
 
   elsif user_selection == '2'
     menu.display_exit_message()
@@ -33,7 +40,6 @@ while true do
   end
 end
 
-# Intake letter from player
 # Give feedback on letter guessed correctly or incorrectly
 
 # Increment incorrect guesses

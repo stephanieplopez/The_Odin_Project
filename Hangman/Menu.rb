@@ -13,7 +13,7 @@ class Menu
       puts "Please choose an option: "
   end
 
-  def prompt_player()
+  def prompt_player_for_name()
     print "Please enter player name: "
   end
 
@@ -21,6 +21,11 @@ class Menu
     print "Welcome " + playerName + " to the best game: Beat the Snowman!"
     puts
   end
+
+  def prompt_player_for_letter()
+    print "Please guess a letter: "
+  end
+
 
   def display_exit_message()
       puts 
