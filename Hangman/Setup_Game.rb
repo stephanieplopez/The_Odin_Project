@@ -12,12 +12,11 @@ class SetupGame
     contents.each do |word|
       valid_words.append(word.strip) if word.length >= 6 and word.length <= 13
     end
-    puts 'File has been processed and cleaned successfully!'
     valid_words
   end
 
   def select_correct_answer(valid_words)
-    valid_words[rand(8451)]
+    valid_words[rand(valid_words.length() - 1)]
   end
 
 end

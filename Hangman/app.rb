@@ -5,21 +5,23 @@ require_relative 'Player.rb'
 
 menu = Menu.new()
 
-
-
 while true do
   menu.display_menu_options()
   user_selection = gets.chomp
   if user_selection == '1'
     puts "User has started game"
 
+    menu.prompt_player()
+    player = Player.new(gets.chomp)
+    menu.welcome_player(player.name)
     board_setup = SetupGame.new()
     
     game_board = Board.new(board_setup.answer)
+
+    # remove line when finalizing the game
     puts game_board.answer
-    # remove the above line when finalizing the game
-    print game_board.masked_answer
-    # maybe move this print to the Board.rb class and have a display board method
+
+    game_board.display_board
 
   elsif user_selection == '2'
     menu.display_exit_message()
@@ -31,6 +33,15 @@ while true do
   end
 end
 
-# Create display board method in Board class
-# Lay foundation for Player class
-# Intake answers from players
+# Intake letter from player
+# Give feedback on letter guessed correctly or incorrectly
+
+# Increment incorrect guesses
+# Render correct snowman 'part' if incorrect guess was given
+# Display letters guessed by Player
+
+
+# Ability to quit and start back up to current game session
+
+# Display fun graphic if they win!!!!!
+# QOL - ALL CAPS, every day, all day

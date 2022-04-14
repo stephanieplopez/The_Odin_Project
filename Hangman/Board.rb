@@ -10,4 +10,9 @@ class Board
     @masked_answer = answer.gsub(/[a-z]/, "_").split("")
   end
 
+  def display_board()
+    masked_answer.each { |character| print character + " "}
+    puts ""
+  end
+
 end
