@@ -25,10 +25,11 @@ while true do
     
     game_board.display_board
 
-    menu.prompt_player_for_letter
+    game_board.prompt_player_for_letter
 
-    letter_guessed = gets.chomp
-    game_board.receive_letter(letter_guessed)
+    valid_letter_guess = game_board.validate_letter_from_player()
+
+    game_board.process_guess(valid_letter_guess)
 
   elsif user_selection == '2'
     menu.display_exit_message()
@@ -40,8 +41,8 @@ while true do
   end
 end
 
-# Give feedback on letter guessed correctly or incorrectly
 
+# Replace underscore in masked answer with correct guess
 # Increment incorrect guesses
 # Render correct snowman 'part' if incorrect guess was given
 # Display letters guessed by Player

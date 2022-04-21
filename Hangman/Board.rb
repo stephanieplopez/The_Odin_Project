@@ -15,10 +15,39 @@ class Board
     puts ""
   end
 
-  def receive_letter(letter)
-    puts letter
-    guesses.append(letter)
-    puts guesses
+  def prompt_player_for_letter()
+    print "Please guess a letter: "
   end
+
+  def validate_letter_from_player()
+    input = false
+    until input == true
+      user_input = gets.chomp
+      if user_input.match('^[A-Za-z]$')
+        if guesses.any?(user_input)
+          puts "*** Letter has already been guessed ***"
+          prompt_player_for_letter()
+        else
+          guesses.append(user_input)
+          input = true
+        end
+      else
+        puts "*** Please enter a single letter ***"
+        prompt_player_for_letter()
+      end
+    end
+    return user_input
+  end
+
+  def process_guess(letter)
+    if answer.include?(letter)
+      puts "*** Correct! The answer contains '" + letter + "' ***"
+      indices_to_reveal = (0 ... answer.length).find_all { |i| answer[i,1] == letter}
+      print indices_to_reveal
+    else
+      puts "*** Incorrect, '" + letter + "' isn't in the answer ***" 
+    end
+  end
+
 
 end

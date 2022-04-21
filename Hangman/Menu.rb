@@ -22,11 +22,6 @@ class Menu
     puts
   end
 
-  def prompt_player_for_letter()
-    print "Please guess a letter: "
-  end
-
-
   def display_exit_message()
       puts 
       puts "******************************"
