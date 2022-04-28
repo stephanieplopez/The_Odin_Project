@@ -9,7 +9,6 @@ while true do
   menu.display_menu_options()
   user_selection = gets.chomp
   if user_selection == '1'
-    puts "User has started game"
 
     menu.prompt_player_for_name()
     player = Player.new(gets.chomp)
@@ -21,8 +20,12 @@ while true do
     # remove line when finalizing the game
     puts game_board.answer
 
-    # We will want a loop here so that the player gets more than 1 turn
-    
+    # We will want to break this loop when word is completed
+
+    isGameFinished = false
+
+    while isGameFinished == false do
+
     game_board.display_board
 
     game_board.prompt_player_for_letter
@@ -30,6 +33,8 @@ while true do
     valid_letter_guess = game_board.validate_letter_from_player()
 
     game_board.process_guess(valid_letter_guess)
+
+    end
 
   elsif user_selection == '2'
     menu.display_exit_message()
@@ -42,10 +47,8 @@ while true do
 end
 
 
-# Replace underscore in masked answer with correct guess
 # Increment incorrect guesses
 # Render correct snowman 'part' if incorrect guess was given
-# Display letters guessed by Player
 
 
 # Ability to quit and start back up to current game session

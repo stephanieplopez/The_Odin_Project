@@ -10,7 +10,7 @@ class Menu
   def display_menu_options()
       puts "1. Start Game"
       puts "2. Exit Game"
-      puts "Please choose an option: "
+      print "Please choose an option: "
   end
 
   def prompt_player_for_name()
@@ -18,7 +18,8 @@ class Menu
   end
 
   def welcome_player(playerName)
-    print "Welcome " + playerName + " to the best game: Beat the Snowman!"
+    puts
+    print "Welcome, " + playerName + ", to the best game: Beat the Snowman!"
     puts
   end
 
