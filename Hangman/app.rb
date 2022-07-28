@@ -26,13 +26,13 @@ while true do
 
     while isGameFinished == false do
 
-    game_board.display_board
+      game_board.display_board
 
-    game_board.prompt_player_for_letter
+      game_board.prompt_player_for_letter
 
-    valid_letter_guess = game_board.validate_letter_from_player()
+      valid_letter_guess = game_board.validate_letter_from_player()
 
-    game_board.process_guess(valid_letter_guess)
+      game_board.process_guess(valid_letter_guess)
 
     end
 
@@ -46,12 +46,12 @@ while true do
   end
 end
 
-
-# Increment incorrect guesses
+# Game ends when number of incorrect guesses reaches certain threshold
 # Render correct snowman 'part' if incorrect guess was given
-
 
 # Ability to quit and start back up to current game session
 
 # Display fun graphic if they win!!!!!
 # QOL - ALL CAPS, every day, all day
+
+# General cleanup - spacing, game conditions, etc.

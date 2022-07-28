@@ -46,9 +46,10 @@ class Board
 
   def process_guess(letter)
     if answer.include?(letter)
+      puts
       puts "*** Correct! The answer contains '" + letter + "' ***"
       indices_to_reveal = (0 ... answer.length).find_all { |i| answer[i,1] == letter}
-      print indices_to_reveal
+      puts
 
       indices_to_reveal.each do |i|
         masked_answer[i] = letter
@@ -57,7 +58,7 @@ class Board
     else
       puts "*** Incorrect, '" + letter + "' isn't in the answer ***" 
       @incorrect_guess_count += 1
-      puts incorrect_guess_count
+      puts "Number of incorrect guesses: " + incorrect_guess_count.to_s
     end
   end
 
