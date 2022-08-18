@@ -62,5 +62,12 @@ class Board
     end
   end
 
+  def check_for_win_or_loss()
+    if @incorrect_guess_count > 5
+      "loss"
+    elsif @masked_answer.none? {|letter| letter == "_"}
+      "win"
+    end
+  end
 
 end

@@ -34,6 +34,10 @@ while true do
 
       game_board.process_guess(valid_letter_guess)
 
+      if game_board.check_for_win_or_loss == "loss" || game_board.check_for_win_or_loss == "win"
+        isGameFinished = true
+      end 
+      
     end
 
   elsif user_selection == '2'
@@ -46,7 +50,6 @@ while true do
   end
 end
 
-# Game ends when number of incorrect guesses reaches certain threshold
 # Render correct snowman 'part' if incorrect guess was given
 
 # Ability to quit and start back up to current game session
