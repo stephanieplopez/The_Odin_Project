@@ -12,9 +12,14 @@ class Board
   end
 
   def display_board()
+    render_ascii_art()
+    puts
+    print "Word to guess: "
     masked_answer.each { |character| print character + " "}
-    puts ""
-    print "Guesses that have been made so far: "
+    puts
+    puts
+    puts "Number of incorrect guesses: " + incorrect_guess_count.to_s
+    print "Letters that have been guessed so far: "
     print guesses
     puts
   end
@@ -57,8 +62,8 @@ class Board
 
     else
       puts "*** Incorrect, '" + letter + "' isn't in the answer ***" 
+      puts 
       @incorrect_guess_count += 1
-      puts "Number of incorrect guesses: " + incorrect_guess_count.to_s
     end
   end
 
@@ -67,6 +72,12 @@ class Board
       "loss"
     elsif @masked_answer.none? {|letter| letter == "_"}
       "win"
+    end
+  end
+
+  def render_ascii_art
+    File.foreach("snowman_" + incorrect_guess_count.to_s + ".txt") do |line|
+      puts line
     end
   end
 

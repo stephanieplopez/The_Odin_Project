@@ -20,13 +20,15 @@ while true do
     # remove line when finalizing the game
     puts game_board.answer
 
-    # We will want to break this loop when word is completed
-
     isGameFinished = false
 
-    while isGameFinished == false do
+    until isGameFinished == true do
 
       game_board.display_board
+
+      if game_board.check_for_win_or_loss == "loss" || game_board.check_for_win_or_loss == "win"
+        break
+      end
 
       game_board.prompt_player_for_letter
 
@@ -34,10 +36,6 @@ while true do
 
       game_board.process_guess(valid_letter_guess)
 
-      if game_board.check_for_win_or_loss == "loss" || game_board.check_for_win_or_loss == "win"
-        isGameFinished = true
-      end 
-      
     end
 
   elsif user_selection == '2'
@@ -50,7 +48,7 @@ while true do
   end
 end
 
-# Render correct snowman 'part' if incorrect guess was given
+# Inform player if they have won or lost when game ends
 
 # Ability to quit and start back up to current game session
 
