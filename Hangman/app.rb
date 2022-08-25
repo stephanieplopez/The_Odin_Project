@@ -51,6 +51,7 @@ end
 # Inform player if they have won or lost when game ends
 
 # Ability to quit and start back up to current game session
+# -- https://www.theodinproject.com/lessons/ruby-files-and-serialization
 
 # Display fun graphic if they win!!!!!
 # QOL - ALL CAPS, every day, all day

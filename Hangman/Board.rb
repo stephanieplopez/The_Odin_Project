@@ -12,20 +12,20 @@ class Board
   end
 
   def display_board()
+    puts "Number of incorrect guesses: " + @incorrect_guess_count.to_s
+
     render_ascii_art()
     puts
     print "Word to guess: "
     masked_answer.each { |character| print character + " "}
     puts
-    puts
-    puts "Number of incorrect guesses: " + incorrect_guess_count.to_s
     print "Letters that have been guessed so far: "
     print guesses
+    puts
     puts
   end
 
   def prompt_player_for_letter()
-    puts
     print "Please guess a letter: "
   end
 
