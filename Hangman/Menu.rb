@@ -7,10 +7,16 @@ class Menu
     puts
   end
 
-  def display_menu_options()
-    puts "1. New Game"
-    puts "2. Load Saved Game"
-    puts "3. Exit Game"
+  def display_main_menu_options()
+    puts "1. New Game or Load Saved Game"
+    puts "2. Exit Game"
+    puts
+    print "Please choose an option: "
+  end
+
+  def display_main_menu_options()
+    puts "1. New Game or Load Saved Game"
+    puts "2. Exit Game"
     puts
     print "Please choose an option: "
   end

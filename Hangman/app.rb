@@ -20,6 +20,7 @@ while true do
     # remove line when finalizing the game
     puts game_board.answer
 
+    # ******** Game Play Begins *********
     isGameFinished = false
 
     until isGameFinished == true do
@@ -58,8 +59,6 @@ while true do
     exit
   end
 end
-
-# Inform player if they have won or lost when game ends
 
 # Ability to quit and start back up to current game session
 # -- https://www.theodinproject.com/lessons/ruby-files-and-serialization
