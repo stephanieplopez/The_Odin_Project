@@ -24,13 +24,15 @@ while true do
 
     until isGameFinished == true do
 
-      game_board.display_board
+      game_board.display_board()
 
-      if game_board.check_for_win_or_loss == "loss" || game_board.check_for_win_or_loss == "win"
+      game_board.check_for_win_or_loss()
+
+      if game_board.game_outcome == "loss" || game_board.game_outcome == "win"
         break
       end
 
-      game_board.prompt_player_for_letter
+      game_board.prompt_player_for_letter()
 
       valid_letter_guess = game_board.validate_letter_from_player()
 
@@ -38,7 +40,16 @@ while true do
 
     end
 
+    #win, lose, or save game
   elsif user_selection == '2'
+    menu.display_load_slots()
+
+    puts "Loading saved game "
+    puts "Loading...." 
+    puts "...."
+    puts ""
+
+  elsif user_selection == '3'
     menu.display_exit_message()
     exit
 

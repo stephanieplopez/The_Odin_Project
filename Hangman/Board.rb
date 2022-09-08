@@ -2,13 +2,14 @@ require_relative 'Player.rb'
 require_relative 'Setup_Game.rb'
 
 class Board
-  attr_accessor :answer, :masked_answer, :split_answer, :guesses, :incorrect_guess_count
+  attr_accessor :answer, :masked_answer, :split_answer, :guesses, :incorrect_guess_count, :game_outcome
 
   def initialize(answer)
     @answer = answer
     @masked_answer = answer.gsub(/[a-z]/, "_").split("")
     @guesses = []
     @incorrect_guess_count = 0
+    @game_outcome = ""
   end
 
   def display_board()
@@ -69,9 +70,11 @@ class Board
 
   def check_for_win_or_loss()
     if @incorrect_guess_count > 5
-      "loss"
+      puts "You lose"
+      @game_outcome = "loss"
     elsif @masked_answer.none? {|letter| letter == "_"}
-      "win"
+      puts "You winnnnnnnnnn"
+      @game_outcome = "win"
     end
   end
 
