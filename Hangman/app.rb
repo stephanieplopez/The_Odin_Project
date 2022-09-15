@@ -18,6 +18,7 @@ while true do
     
     game_board = Board.new(board_setup.answer)
 
+    
     # remove line when finalizing the game
     puts game_board.answer
 
