@@ -2,11 +2,12 @@ require_relative 'Setup_Game.rb'
 require_relative 'Board.rb'
 require_relative 'Menu.rb'
 require_relative 'Player.rb'
+require_relative 'Load_Save_Game.rb'
 
 menu = Menu.new()
 
 while true do
-  menu.display_menu_options()
+  menu.display_main_menu_options()
   user_selection = gets.chomp
   if user_selection == '1'
 
@@ -33,11 +34,25 @@ while true do
         break
       end
 
-      game_board.prompt_player_for_letter()
+      menu.chance_to_save()
+      user_selection = gets.chomp
+      if user_selection == '1'
 
-      valid_letter_guess = game_board.validate_letter_from_player()
+        game_board.prompt_player_for_letter()
 
-      game_board.process_guess(valid_letter_guess)
+        valid_letter_guess = game_board.validate_letter_from_player()
+
+        game_board.process_guess(valid_letter_guess)
+      
+      elsif user_selection == '2'
+
+        game_slot = LoadSaveGame.new()
+
+        game_slot.save()
+
+        break
+
+      end
 
     end
 
@@ -62,6 +77,10 @@ end
 
 # Ability to quit and start back up to current game session
 # -- https://www.theodinproject.com/lessons/ruby-files-and-serialization
+# -- https://ruby-doc.org/stdlib-2.6.1/libdoc/csv/rdoc/CSV.html#method-c-open
+# -- https://www.theodinproject.com/lessons/ruby-event-manager#iteration-1-parsing-with-csv
+# -- https://ruby-doc.org/core-3.1.2/doc/csv/recipes/generating_rdoc.html
+
 
 # Display fun graphic if they win!!!!!
 # QOL - ALL CAPS, every day, all day
