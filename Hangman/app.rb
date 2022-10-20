@@ -5,12 +5,16 @@ require_relative 'Player.rb'
 require_relative 'Load_Save_Game.rb'
 
 menu = Menu.new()
+  
+load_save_game1 = LoadSaveGame.new()
+load_save_game1.test_method()
+# load_save_game1.save()
 
 while true do
   menu.display_main_menu_options()
   user_selection = gets.chomp
-  if user_selection == '1'
 
+  if user_selection == '1'
     menu.prompt_player_for_name()
     player = Player.new(gets.chomp)
     menu.welcome_player(player.name)
