@@ -3,16 +3,19 @@ require_relative 'Player.rb'
 require 'csv'
 
 class LoadSaveGame
-  attr_accessor :answer, :masked_answer, :guesses, :incorrect_guess_count, :game_outcome
+  attr_accessor :path, :answer, :masked_answer, :guesses, :incorrect_guess_count, :game_outcome
     
+    def initialize()
+        @path = 'hangman_game_saves.csv'
+    end
     # def load_game()
       
     # end
     
-    def test_method()
-      path = 'test.csv'
-      CSV.open(path, 'w', headers: ['Save_Slot', 'Name', 'Answer', 'Masked_Answer', 'Guesses', 'Incorrect_Guesses'], write_headers: true) do |csv|
-          csv << [1, 'Ligunberry', 'Booty', '_ _ _ _ _', ['a', 'c'], 2]
+    def save(save_name, player_name, answer, masked_answer, guessed_letters, incorrect_guess_count)
+      CSV.open(path, 'a+') do |csv|
+          csv << ['Save_Slot', 'Name', 'Answer', 'Masked_Answer', 'Guesses', 'Incorrect_Guesses'] if csv.count.eql? 0
+          csv << [save_name, player_name, answer, masked_answer, guessed_letters, incorrect_guess_count]
       end
     end
 

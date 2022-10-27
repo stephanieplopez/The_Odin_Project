@@ -7,7 +7,7 @@ require_relative 'Load_Save_Game.rb'
 menu = Menu.new()
   
 load_save_game1 = LoadSaveGame.new()
-load_save_game1.test_method()
+# load_save_game1.save_game()
 # load_save_game1.save()
 
 while true do
@@ -51,9 +51,13 @@ while true do
       
       elsif user_selection == '2'
 
+        menu.prompt_player_for_save_game_name()
+
+        game_slot_name = gets.chomp
+
         game_slot = LoadSaveGame.new()
 
-        game_slot.save()
+        game_slot.save(game_slot_name, player.name, game_board.answer, game_board.masked_answer, game_board.guesses, game_board.incorrect_guess_count)
 
         break
 
@@ -86,8 +90,8 @@ end
 # -- https://www.theodinproject.com/lessons/ruby-event-manager#iteration-1-parsing-with-csv
 # -- https://ruby-doc.org/core-3.1.2/doc/csv/recipes/generating_rdoc.html
 
+# Ability to load games
 
 # Display fun graphic if they win!!!!!
 # QOL - ALL CAPS, every day, all day
-
 # General cleanup - spacing, game conditions, etc.

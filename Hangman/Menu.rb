@@ -23,7 +23,7 @@ class Menu
   # end
 
   def chance_to_save()
-    puts "1. Guess another letter."
+    puts "1. Guess a letter."
     puts "2. Save game and exit to main menu."
     puts
     print "Please choose an option: "
@@ -35,6 +35,10 @@ class Menu
 
   def prompt_player_for_name()
     print "Please enter player name: "
+  end
+
+  def prompt_player_for_save_game_name()
+    print "Please enter a name for your saved game:"
   end
 
   def welcome_player(playerName)
